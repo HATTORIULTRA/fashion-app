@@ -1,13 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import styles from './Home.module.scss'
 import ClothesItem from "../../components/ClothesItem/ClothesItem.jsx";
 import ClothesItemSkeleton from "../../components/ClothesItemSkeleton/ClothesItemSkeleton.jsx";
 import Sort from "../../components/Sort/Sort.jsx";
+import {SearchContext} from "../../App.jsx";
 
 // https://559da0082db6fafe.mokky.dev/items
 // https://aidarv.pythonanywhere.com/looks/
 
-function Home({searchValue}) {
+function Home() {
+   const {searchValue} = useContext(SearchContext);
    const [clothes, setClothes] = useState([]);
    const [isLoading, setIsLoading] = useState(true);
    const [sortType, setSortType] = useState({

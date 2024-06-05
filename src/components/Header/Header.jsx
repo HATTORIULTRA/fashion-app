@@ -4,13 +4,13 @@ import CartButton from "../CartButton/CartButton.jsx";
 import {Link} from "react-router-dom";
 import Search from "../Search/Search.jsx";
 
-function Header({searchValue, setSearchValue}) {
+function Header() {
    return (
       <header className={styles.header}>
          <Link to={'/'}>
             <img width={200} src={`${logoWhite}`} alt="logotype"/>
          </Link>
-         <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+         <Search  />
          <Link to={'/cart'}><CartButton/></Link>
       </header>
    );
