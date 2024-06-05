@@ -1,0 +1,19 @@
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.wrapper .container {
+  margin-top: 10px;
+  background: linear-gradient(0deg, rgb(27, 196, 211) 0%, rgb(142, 121, 190) 50%, rgb(171, 255, 132) 100%);
+  border-radius: 20px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+/*# sourceMappingURL=App.module.css.map */

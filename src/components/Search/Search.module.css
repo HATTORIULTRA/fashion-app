@@ -1,0 +1,36 @@
+.wrapper {
+  position: relative;
+  left: -20px;
+}
+.wrapper .magnifierIcon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  opacity: 0.5;
+}
+.wrapper .input {
+  background-color: inherit;
+  font-weight: 500;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  padding: 8px 20px 8px 42px;
+  width: 300px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+.wrapper .closeIcon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.wrapper .closeIcon:hover {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=Search.module.css.map */

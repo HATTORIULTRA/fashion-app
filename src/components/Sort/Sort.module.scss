@@ -1,0 +1,50 @@
+.wrapper {
+  margin: 20px 40px 0 40px;
+  position: relative;
+  display: flex;
+  .label {
+    svg {
+      margin-right: 8px;
+    }
+    b {
+      color: #2d2d2d;
+    }
+    span {
+      cursor: pointer;
+      color: #2d2d2d;
+      border-bottom: 1px dashed #343434;
+      user-select: none;
+    }
+  }
+  .popup {
+    z-index: 10;
+    position: absolute;
+    right: -7px;
+    margin-top: 25px;
+    background: #606060;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px 0;
+    width: 210px;
+
+    ul {
+      overflow: hidden;
+      li {
+        user-select: none;
+        padding: 12px 20px;
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+        &.active {
+          font-weight: bold;
+          color: #414141;
+        }
+      }
+    }
+  }
+}

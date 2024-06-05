@@ -1,0 +1,46 @@
+.wrapper {
+  margin: 20px 40px 0 40px;
+  position: relative;
+  display: flex;
+}
+.wrapper .label svg {
+  margin-right: 8px;
+}
+.wrapper .label b {
+  color: #2d2d2d;
+}
+.wrapper .label span {
+  cursor: pointer;
+  color: #2d2d2d;
+  border-bottom: 1px dashed #343434;
+  user-select: none;
+}
+.wrapper .popup {
+  z-index: 10;
+  position: absolute;
+  right: -7px;
+  margin-top: 25px;
+  background: #606060;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px 0;
+  width: 210px;
+}
+.wrapper .popup ul {
+  overflow: hidden;
+}
+.wrapper .popup ul li {
+  user-select: none;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+.wrapper .popup ul li.active, .wrapper .popup ul li:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+.wrapper .popup ul li.active {
+  font-weight: bold;
+  color: #414141;
+}
+
+/*# sourceMappingURL=Sort.module.css.map */

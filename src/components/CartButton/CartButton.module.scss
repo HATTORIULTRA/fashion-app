@@ -1,0 +1,34 @@
+.wrapper {
+  width: 152px;
+  height: 52px;
+  margin-right: 2px;
+  //background: linear-gradient(90deg, rgb(46, 124, 104) 0%, rgb(130, 36, 145) 50%, rgba(206, 143, 152) 100%);
+  background: linear-gradient(-90deg, rgba(27,196,211,1) 0%, rgba(142,121,190,1) 50%, rgba(171,255,132,1) 100%);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .button {
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    background-color: #181818;
+    border-radius: 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    .delimiter {
+      width: 1px;
+      height: 25px;
+      background-color: rgb(255, 255, 255);
+      margin-left: 14px;
+      margin-right: 14px;
+    }
+    svg {
+      margin-bottom: 4px;
+      margin-right: 3px;
+    }
+  }
+}

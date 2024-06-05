@@ -1,0 +1,18 @@
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  .container {
+    margin-top: 10px;
+    background: linear-gradient(0deg, rgba(27,196,211,1) 0%, rgba(142,121,190,1) 50%, rgba(171,255,132,1) 100%);
+    border-radius: 20px;
+  }
+}
+// 171, 255, 132
+//27, 196, 211
+.content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
