@@ -1,13 +1,28 @@
-import styles from './Search.module.scss'
-import {useContext, useRef} from "react";
+import {useCallback, useContext, useRef, useState} from "react";
+import debounce from 'lodash.debounce'
 import {SearchContext} from "../../App.jsx";
+import styles from './Search.module.scss'
 
 function Search() {
-   const {searchValue, setSearchValue} = useContext(SearchContext);
+   const [value, setValue] = useState('');
+   const {setSearchValue} = useContext(SearchContext);
    const inputRef = useRef(null);
+
+   const updateSearchValue = useCallback(
+      debounce((str) => {
+         setSearchValue(str);
+      }, 500), []
+   );
+
    function clearSearchInput() {
       setSearchValue('');
+      setValue('');
       inputRef.current.focus();
+   }
+
+   function onChangeInput(event) {
+      setValue(event.target.value);
+      updateSearchValue(event.target.value);
    }
 
    return (
@@ -28,12 +43,12 @@ function Search() {
 
          <input className={styles.input}
                 ref={inputRef}
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
+                value={value}
+                onChange={onChangeInput}
                 placeholder='Искать образы'/>
 
          {
-            searchValue.length > 0 ?
+            value.length > 0 ?
                <svg className={styles.closeIcon}
                     onClick={clearSearchInput}
                     width="800px" height="800px" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
