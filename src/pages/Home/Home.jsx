@@ -1,10 +1,13 @@
 import React, {useContext, useEffect, useState} from 'react';
+import {SearchContext} from "../../App.jsx";
+import {useSelector} from "react-redux";
+import axios from "axios";
+
 import styles from './Home.module.scss'
+
 import ClothesItem from "../../components/ClothesItem/ClothesItem.jsx";
 import ClothesItemSkeleton from "../../components/ClothesItemSkeleton/ClothesItemSkeleton.jsx";
 import Sort from "../../components/Sort/Sort.jsx";
-import {SearchContext} from "../../App.jsx";
-import {useSelector} from "react-redux";
 
 // https://559da0082db6fafe.mokky.dev/items
 // https://aidarv.pythonanywhere.com/looks/
@@ -19,12 +22,11 @@ function Home() {
 
       const search = searchValue ? `name=*${searchValue}` : "";
 
-      fetch(`https://559da0082db6fafe.mokky.dev/items?${search}&sortBy=${sortType}`)
-         .then(res => res.json())
-         .then(data => {
-            setClothes(data);
+      axios.get(`https://559da0082db6fafe.mokky.dev/items?${search}&sortBy=${sortType}`)
+         .then(res => {
+            setClothes(res.data);
             setIsLoading(false);
-         })
+         });
    }, [sortType, searchValue]);
 
 

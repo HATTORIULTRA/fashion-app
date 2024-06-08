@@ -1,11 +1,13 @@
 import styles from './Search.module.scss'
-import {useContext} from "react";
+import {useContext, useRef} from "react";
 import {SearchContext} from "../../App.jsx";
 
 function Search() {
    const {searchValue, setSearchValue} = useContext(SearchContext);
+   const inputRef = useRef(null);
    function clearSearchInput() {
       setSearchValue('');
+      inputRef.current.focus();
    }
 
    return (
@@ -25,6 +27,7 @@ function Search() {
          </svg>
 
          <input className={styles.input}
+                ref={inputRef}
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
                 placeholder='Искать образы'/>
