@@ -4,6 +4,7 @@ import ClothesItem from "../../components/ClothesItem/ClothesItem.jsx";
 import ClothesItemSkeleton from "../../components/ClothesItemSkeleton/ClothesItemSkeleton.jsx";
 import Sort from "../../components/Sort/Sort.jsx";
 import {SearchContext} from "../../App.jsx";
+import {useSelector} from "react-redux";
 
 // https://559da0082db6fafe.mokky.dev/items
 // https://aidarv.pythonanywhere.com/looks/
@@ -12,17 +13,13 @@ function Home() {
    const {searchValue} = useContext(SearchContext);
    const [clothes, setClothes] = useState([]);
    const [isLoading, setIsLoading] = useState(true);
-   const [sortType, setSortType] = useState({
-      name: 'популярности',
-      sortProperty: 'rating'
-   });
+   const sortType = useSelector(state => state.filter.sort.sortProperty)
    useEffect(() => {
       setIsLoading(true);
 
-      const sortBy = sortType.sortProperty;
       const search = searchValue ? `name=*${searchValue}` : "";
 
-      fetch(`https://559da0082db6fafe.mokky.dev/items?${search}&sortBy=${sortBy}`)
+      fetch(`https://559da0082db6fafe.mokky.dev/items?${search}&sortBy=${sortType}`)
          .then(res => res.json())
          .then(data => {
             setClothes(data);
@@ -42,7 +39,7 @@ function Home() {
    return (
       <>
          <div className={styles.filters}>
-            <Sort value={sortType} onChangeSort={(i) => setSortType(i)} />
+            <Sort />
          </div>
          <div className={styles.content}>
             {isLoading ? skeleton : looksItems}
