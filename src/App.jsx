@@ -18,8 +18,8 @@ function App() {
             <Header  />
             <div className={styles.container}>
                <Routes>
-                  <Route path={'/'} element={<Home />} />
-                  <Route path={'/cart'} element={<Cart />} />
+                  <Route path={'/fashion-app/'} element={<Home />} />
+                  <Route path={'/fashion-app/cart'} element={<Cart />} />
                   <Route path={'*'} element={<NotFound />} />
                </Routes>
             </div>
