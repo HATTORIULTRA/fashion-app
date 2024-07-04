@@ -7,11 +7,11 @@ import Search from "../Search/Search.jsx";
 function Header() {
    return (
       <header className={styles.header}>
-         <Link to={'/'}>
+         <Link to={'/fashion-app/'}>
             <img width={200} src={`${logoWhite}`} alt="logotype"/>
          </Link>
          <Search  />
-         <Link to={'/cart'}><CartButton/></Link>
+         <Link to={'/fashion-app/cart'}><CartButton/></Link>
       </header>
    );
 }
